@@ -1,0 +1,2266 @@
+{
+  "version": "1.0",
+  "total_skills": 59,
+  "skills": [
+    {
+      "id": "engine-modifications",
+      "name": "Engine Modifications",
+      "path": "01_通用/01_UE引擎与源码/01_引擎修改指南/engine-modifications",
+      "description": "Custom modifications to Unreal Engine 5 for ProjectLungfish, including bug fixes, performance optimizations, and project-specific features.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "测试": 0.9,
+          "性能": 1.0,
+          "调试": 0.9
+        },
+        "task_type": {
+          "修复": 1.0
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "改引擎",
+        "Engine修改",
+        "cyancook",
+        "引擎源码"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 232
+    },
+    {
+      "id": "engine-slate-runtime",
+      "name": "Engine Slate Runtime",
+      "path": "01_通用/01_UE引擎与源码/02_Slate运行时/engine-slate-runtime",
+      "description": "Unreal Engine Slate UI framework — widget base classes, declarative syntax, paint/layout pipeline, invalidation fast-path, input routing, style system, and UMG bridge.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "UI": 1.0,
+          "编辑器桥接": 1.0
+        },
+        "task_type": {
+          "查询": 0.9,
+          "验证": 0.9
+        },
+        "artifact": {
+          "SWidget": 0.9
+        }
+      },
+      "triggers": [
+        "Slate",
+        "widget",
+        "OnPaint",
+        "SWidget",
+        "UMG"
+      ],
+      "tools": [
+        "ReadFile/WriteFile"
+      ],
+      "estimated_tokens": 3432
+    },
+    {
+      "id": "engine-pcg-plugin",
+      "name": "Engine Pcg Plugin",
+      "path": "01_通用/01_UE引擎与源码/03_PCG插件/engine-pcg-plugin",
+      "description": "UE5 engine PCG plugin covering graph-based procedural generation, World Partition batch build pipeline, PCGComponent lifecycle.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "UI": 1.0,
+          "PCG": 0.9,
+          "构建": 1.0,
+          "插件": 0.8
+        },
+        "task_type": {
+          "构建": 1.0
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "PCG",
+        "程序化生成",
+        "WorldPartitionBuilder"
+      ],
+      "tools": [
+        "Shell"
+      ],
+      "estimated_tokens": 1422
+    },
+    {
+      "id": "localization-string-table",
+      "name": "Localization String Table",
+      "path": "01_通用/01_UE引擎与源码/04_本地化/localization-string-table",
+      "description": "UE StringTable 资产的加载机制、查询 API 选择与多语言支持文档。",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "本地化": 1.0
+        },
+        "task_type": {
+          "查询": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "本地化",
+        "StringTable",
+        "FText",
+        "多语言"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1297
+    },
+    {
+      "id": "gauntlet-test-automation",
+      "name": "Gauntlet Test Automation",
+      "path": "01_通用/02_测试与自动化/01_Gauntlet框架/gauntlet-test-automation",
+      "description": "UE5 Gauntlet framework for automated functional testing.",
+      "vector": {
+        "domain": {
+          "测试": 0.9
+        },
+        "task_type": {
+          "验证": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "Gauntlet",
+        "自动化测试",
+        "functional test"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 5908
+    },
+    {
+      "id": "automated-perf-testing",
+      "name": "Automated Perf Testing",
+      "path": "01_通用/02_测试与自动化/02_性能测试/automated-perf-testing",
+      "description": "UE5 Gauntlet-based automated performance testing framework with Insights traces, CSV profiler, FPS charts.",
+      "vector": {
+        "domain": {
+          "测试": 0.9,
+          "性能": 1.0
+        },
+        "task_type": {
+          "验证": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "性能测试",
+        "Insights",
+        "profiler",
+        "FPS"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1704
+    },
+    {
+      "id": "sessionfrontend-developer",
+      "name": "Sessionfrontend Developer",
+      "path": "01_通用/02_测试与自动化/03_自动化前端/sessionfrontend-developer",
+      "description": "SessionFrontend developer module — Session Browser, Automation, Trace Control.",
+      "vector": {
+        "domain": {
+          "测试": 0.9
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "SessionFrontend",
+        "AutomationWindow"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 2523
+    },
+    {
+      "id": "robomerge-v3",
+      "name": "Robomerge V3",
+      "path": "01_通用/03_工具链与DevOps/01_版本控制工具/robomerge-v3",
+      "description": "RoboMerge v3 — Perforce multi-branch automated merge system.",
+      "vector": {
+        "domain": {
+          "测试": 0.9,
+          "性能": 1.0,
+          "版本控制": 1.0,
+          "工具链": 0.8,
+          "协作": 0.8
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "RoboMerge",
+        "自动合并"
+      ],
+      "tools": [
+        "Shell(p4)"
+      ],
+      "estimated_tokens": 1513
+    },
+    {
+      "id": "unreal-game-sync",
+      "name": "Unreal Game Sync",
+      "path": "01_通用/03_工具链与DevOps/01_版本控制工具/unreal-game-sync",
+      "description": "UGS — C# WinForms desktop app + CLI for Perforce-based UE5 project management.",
+      "vector": {
+        "domain": {
+          "测试": 0.9,
+          "性能": 1.0,
+          "版本控制": 1.0,
+          "工具链": 0.8
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "UGS",
+        "GameSync",
+        "同步"
+      ],
+      "tools": [
+        "Shell(p4)"
+      ],
+      "estimated_tokens": 2573
+    },
+    {
+      "id": "ue-cli-development",
+      "name": "Ue Cli Development",
+      "path": "01_通用/03_工具链与DevOps/02_ue-cli开发/ue-cli-development",
+      "description": "Development workflow for the Tools/ue-cli Python repository.",
+      "vector": {
+        "domain": {
+          "工具链": 0.8,
+          "编辑器桥接": 1.0
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "ue-cli开发",
+        "ue-cli代码"
+      ],
+      "tools": [
+        "Shell(python)",
+        "Shell"
+      ],
+      "estimated_tokens": 1921
+    },
+    {
+      "id": "p4-workflow",
+      "name": "P4 Workflow",
+      "path": "01_通用/04_项目管理与协作/01_P4工作流/p4-workflow",
+      "description": "Perforce version control workflow for ProjectLungfish.",
+      "vector": {
+        "domain": {
+          "测试": 0.9,
+          "性能": 1.0,
+          "版本控制": 1.0,
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "P4",
+        "Perforce",
+        "Checkout",
+        "Changelist",
+        "提交"
+      ],
+      "tools": [
+        "Shell(p4)"
+      ],
+      "estimated_tokens": 2691
+    },
+    {
+      "id": "pr",
+      "name": "Pr",
+      "path": "01_通用/04_项目管理与协作/01_P4工作流/pr",
+      "description": "P4 changelist description updater.",
+      "vector": {
+        "domain": {
+          "版本控制": 1.0,
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "修改": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "CL描述",
+        "changelist description"
+      ],
+      "tools": [
+        "Shell(p4)"
+      ],
+      "estimated_tokens": 766
+    },
+    {
+      "id": "openspec-apply-change",
+      "name": "Openspec Apply Change",
+      "path": "01_通用/04_项目管理与协作/02_OpenSpec工作流/openspec-apply-change",
+      "description": "Implement tasks from an OpenSpec change.",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "修改": 0.9,
+          "实现": 0.8
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "OpenSpec",
+        "实现任务"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1220
+    },
+    {
+      "id": "openspec-archive-change",
+      "name": "Openspec Archive Change",
+      "path": "01_通用/04_项目管理与协作/02_OpenSpec工作流/openspec-archive-change",
+      "description": "Archive a completed change in the experimental workflow.",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "修改": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "OpenSpec",
+        "归档"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1067
+    },
+    {
+      "id": "openspec-explore",
+      "name": "Openspec Explore",
+      "path": "01_通用/04_项目管理与协作/02_OpenSpec工作流/openspec-explore",
+      "description": "Enter explore mode — thinking partner for exploring ideas.",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "OpenSpec",
+        "探索"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 2714
+    },
+    {
+      "id": "openspec-propose",
+      "name": "Openspec Propose",
+      "path": "01_通用/04_项目管理与协作/02_OpenSpec工作流/openspec-propose",
+      "description": "Propose a new change with all artifacts generated in one step.",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "修改": 0.9,
+          "创建": 0.8
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "OpenSpec",
+        "提案"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1189
+    },
+    {
+      "id": "excel-query",
+      "name": "Excel Query",
+      "path": "01_通用/04_项目管理与协作/03_数据处理/excel-query",
+      "description": "Query Excel files with Python + openpyxl.",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "数据处理": 1.0,
+          "协作": 0.8
+        },
+        "task_type": {
+          "查询": 0.9
+        },
+        "artifact": {
+          ".xlsx": 1.0
+        }
+      },
+      "triggers": [
+        "查Excel",
+        "查表",
+        "读表",
+        "openpyxl"
+      ],
+      "tools": [
+        "Shell(python)"
+      ],
+      "estimated_tokens": 617
+    },
+    {
+      "id": "xlsx-row-copy",
+      "name": "Xlsx Row Copy",
+      "path": "01_通用/04_项目管理与协作/03_数据处理/xlsx-row-copy",
+      "description": "Copy rows between Excel files based on tag matching.",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "数据处理": 1.0,
+          "协作": 0.8,
+          "数据配置": 0.9
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          ".xlsx": 1.0
+        }
+      },
+      "triggers": [
+        "复制Excel行",
+        "跨表格复制",
+        "筛选Excel"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1579
+    },
+    {
+      "id": "branch-manager",
+      "name": "Branch Manager",
+      "path": "01_通用/04_项目管理与协作/04_协作沟通/branch-manager",
+      "description": "Branch management dashboard automation.",
+      "vector": {
+        "domain": {
+          "测试": 0.9,
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "分支管理",
+        "branch conflict",
+        "CI/CD"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 594
+    },
+    {
+      "id": "feishu-doc-reader",
+      "name": "Feishu Doc Reader",
+      "path": "01_通用/04_项目管理与协作/04_协作沟通/feishu-doc-reader",
+      "description": "Read Feishu Wiki documents via API.",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "查询": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "飞书文档",
+        "飞书wiki",
+        "feishu"
+      ],
+      "tools": [
+        "Shell/API"
+      ],
+      "estimated_tokens": 1723
+    },
+    {
+      "id": "kimi-cli-help",
+      "name": "Kimi Cli Help",
+      "path": "01_通用/04_项目管理与协作/05_系统工具/kimi-cli-help",
+      "description": "Kimi Code CLI usage and troubleshooting.",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "调试": 1.0
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "Kimi CLI",
+        "kimi配置"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 504
+    },
+    {
+      "id": "skill-creator",
+      "name": "Skill Creator",
+      "path": "01_通用/04_项目管理与协作/05_系统工具/skill-creator",
+      "description": "Create, modify, and measure skill performance.",
+      "vector": {
+        "domain": {
+          "测试": 0.9,
+          "性能": 1.0,
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "修改": 0.9,
+          "创建": 0.8
+        },
+        "artifact": {
+          "SKILL.md": 0.7
+        }
+      },
+      "triggers": [
+        "创建skill",
+        "skill优化"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 8694
+    },
+    {
+      "id": "template",
+      "name": "Template",
+      "path": "01_通用/04_项目管理与协作/05_系统工具/template",
+      "description": "Template skill placeholder.",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "协作": 0.8
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          "SKILL.md": 0.7
+        }
+      },
+      "triggers": [
+        "template"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 36
+    },
+    {
+      "id": "asset-export",
+      "name": "Asset Export",
+      "path": "02_ProjectLungfish专用/01_资产与内容管线/01_资产导出/asset-export",
+      "description": "One-click export of all project asset types to AssetExports directory.",
+      "vector": {
+        "domain": {
+          "资产": 0.9
+        },
+        "task_type": {
+          "导出": 1.0
+        },
+        "artifact": {
+          ".uasset": 0.8
+        }
+      },
+      "triggers": [
+        "导出资产",
+        "AssetExport",
+        "全量导出",
+        "re-export"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1627
+    },
+    {
+      "id": "blueprint-migration",
+      "name": "Blueprint Migration",
+      "path": "02_ProjectLungfish专用/01_资产与内容管线/02_蓝图/blueprint-migration",
+      "description": "Migrate Unreal Engine Blueprints to native C++ code.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "资产": 0.9,
+          "蓝图": 1.0
+        },
+        "task_type": {
+          "迁移": 1.0
+        },
+        "artifact": {
+          ".cpp/.h": 1.0,
+          "Blueprint": 1.0
+        }
+      },
+      "triggers": [
+        "蓝图转C++",
+        "migrate blueprint",
+        "convert blueprint"
+      ],
+      "tools": [
+        "ReadFile/WriteFile"
+      ],
+      "estimated_tokens": 3061
+    },
+    {
+      "id": "ue-blueprint-reflection",
+      "name": "Ue Blueprint Reflection",
+      "path": "02_ProjectLungfish专用/01_资产与内容管线/02_蓝图/ue-blueprint-reflection",
+      "description": "UE C++ reflection system for Blueprint property access.",
+      "vector": {
+        "domain": {
+          "资产": 0.9,
+          "蓝图": 1.0
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          ".cpp/.h": 1.0,
+          "Blueprint": 1.0
+        }
+      },
+      "triggers": [
+        "反射",
+        "Blueprint属性",
+        "FScriptMapHelper"
+      ],
+      "tools": [
+        "ReadFile/WriteFile"
+      ],
+      "estimated_tokens": 1975
+    },
+    {
+      "id": "damage-flow-graph-authoring",
+      "name": "Damage Flow Graph Authoring",
+      "path": "02_ProjectLungfish专用/01_资产与内容管线/03_FlowGraph/damage-flow-graph-authoring",
+      "description": "Create and modify damage processing nodes for DamageFlowGraph.",
+      "vector": {
+        "domain": {
+          "资产": 0.9
+        },
+        "task_type": {
+          "修改": 0.9,
+          "创建": 0.8
+        },
+        "artifact": {
+          "FlowGraph": 1.0
+        }
+      },
+      "triggers": [
+        "伤害流图",
+        "DamageFlowGraph",
+        "伤害节点"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1637
+    },
+    {
+      "id": "flowgraph-audit",
+      "name": "Flowgraph Audit",
+      "path": "02_ProjectLungfish专用/01_资产与内容管线/03_FlowGraph/flowgraph-audit",
+      "description": "Audit and fix FlowGraph asset bugs via exported JSON.",
+      "vector": {
+        "domain": {
+          "工具链": 0.8,
+          "资产": 0.9,
+          "FlowGraph": 1.0,
+          "调试": 0.9
+        },
+        "task_type": {
+          "修复": 1.0,
+          "审核": 1.0,
+          "导出": 1.0
+        },
+        "artifact": {
+          ".uasset": 0.8,
+          "FlowGraph": 1.0,
+          ".json": 0.8
+        }
+      },
+      "triggers": [
+        "FlowGraph bug",
+        "flow audit",
+        "fix flow"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 3123
+    },
+    {
+      "id": "flowgraph-edit",
+      "name": "Flowgraph Edit",
+      "path": "02_ProjectLungfish专用/01_资产与内容管线/03_FlowGraph/flowgraph-edit",
+      "description": "Modify FlowGraph assets via exported JSON.",
+      "vector": {
+        "domain": {
+          "资产": 0.9,
+          "FlowGraph": 1.0
+        },
+        "task_type": {
+          "修改": 0.9,
+          "导出": 1.0
+        },
+        "artifact": {
+          ".uasset": 0.8,
+          "FlowGraph": 1.0,
+          ".json": 0.8
+        }
+      },
+      "triggers": [
+        "修改FlowGraph",
+        "rewire flow",
+        "flowgraph编辑"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1458
+    },
+    {
+      "id": "entity-tag-modifier",
+      "name": "Entity Tag Modifier",
+      "path": "02_ProjectLungfish专用/02_数据配置与策划/01_实体配置/entity-tag-modifier",
+      "description": "Modify entity tags and properties via Excel.",
+      "vector": {
+        "domain": {
+          "数据处理": 1.0,
+          "数据配置": 0.9,
+          "策划工具": 0.9
+        },
+        "task_type": {
+          "修改": 0.9
+        },
+        "artifact": {
+          ".xlsx": 1.0
+        }
+      },
+      "triggers": [
+        "实体tag",
+        "EntityTag",
+        "实体属性",
+        "InstanceTag"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 9022
+    },
+    {
+      "id": "entry-cpp",
+      "name": "Entry Cpp",
+      "path": "02_ProjectLungfish专用/02_数据配置与策划/02_词条系统/entry-cpp",
+      "description": "Equipment entry system C++ implementation reference.",
+      "vector": {
+        "domain": {
+          "UI": 1.0,
+          "数据配置": 0.9,
+          "词条": 1.0,
+          "策划工具": 0.9
+        },
+        "task_type": {
+          "实现": 0.8
+        },
+        "artifact": {
+          ".cpp/.h": 1.0
+        }
+      },
+      "triggers": [
+        "词条代码",
+        "PLEntryInst",
+        "词条实现",
+        "词条子类"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1751
+    },
+    {
+      "id": "entry-design",
+      "name": "Entry Design",
+      "path": "02_ProjectLungfish专用/02_数据配置与策划/02_词条系统/entry-design",
+      "description": "Equipment entry design and configuration workflow.",
+      "vector": {
+        "domain": {
+          "UI": 1.0,
+          "数据配置": 0.9,
+          "词条": 1.0,
+          "策划工具": 0.9
+        },
+        "task_type": {
+          "配置": 0.8
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "词条设计",
+        "词条配表",
+        "词条池",
+        "词缀",
+        "通货"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 3913
+    },
+    {
+      "id": "equip-entry-pool-config",
+      "name": "Equip Entry Pool Config",
+      "path": "02_ProjectLungfish专用/02_数据配置与策划/02_词条系统/equip-entry-pool-config",
+      "description": "Equipment entry pool configuration generation pipeline.",
+      "vector": {
+        "domain": {
+          "UI": 1.0,
+          "数据配置": 0.9,
+          "词条": 1.0,
+          "策划工具": 0.9
+        },
+        "task_type": {
+          "配置": 0.8
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "词条池配置",
+        "EquipEntryPoolConfig",
+        "generate_config"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1306
+    },
+    {
+      "id": "ConfigurationTools",
+      "name": "Configurationtools",
+      "path": "02_ProjectLungfish专用/02_数据配置与策划/03_策划工具/ConfigurationTools",
+      "description": "Configuration tools for registering building parts and facilities.",
+      "vector": {
+        "domain": {
+          "UI": 1.0,
+          "构建": 1.0,
+          "数据配置": 0.9,
+          "策划工具": 0.9
+        },
+        "task_type": {
+          "构建": 1.0,
+          "配置": 0.8
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "注册建筑",
+        "配置配件",
+        "配置设施"
+      ],
+      "tools": [
+        "Shell"
+      ],
+      "estimated_tokens": 1032
+    },
+    {
+      "id": "native-class-derivation",
+      "name": "Native Class Derivation",
+      "path": "02_ProjectLungfish专用/02_数据配置与策划/04_派生类规则/native-class-derivation",
+      "description": "Enforce PL-derived classes instead of native UE classes.",
+      "vector": {
+        "domain": {
+          "数据配置": 0.9,
+          "策划工具": 0.9
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "派生类",
+        "原生组件",
+        "NativeClassCheck"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 624
+    },
+    {
+      "id": "soft-ue-bridge",
+      "name": "Soft Ue Bridge",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/01_编辑器桥接/soft-ue-bridge",
+      "description": "SoftUEBridge MCP plugin for controlling UE editor from Claude.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "调试": 0.9,
+          "编辑器桥接": 1.0,
+          "插件": 0.8
+        },
+        "task_type": {
+          "修改": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "SoftUEBridge",
+        "MCP",
+        "UE工具调用",
+        "操作UE"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 2027
+    },
+    {
+      "id": "ue-cli-asset",
+      "name": "Ue Cli Asset",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/01_编辑器桥接/ue-cli-asset",
+      "description": "ue-cli asset query and filtering via SoftUEBridge.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "资产": 0.9,
+          "调试": 0.9,
+          "编辑器桥接": 1.0
+        },
+        "task_type": {
+          "查询": 0.9
+        },
+        "artifact": {
+          ".uasset": 0.8
+        }
+      },
+      "triggers": [
+        "ue-cli asset",
+        "查资产",
+        "资产定位"
+      ],
+      "tools": [
+        "Shell"
+      ],
+      "estimated_tokens": 338
+    },
+    {
+      "id": "ue-cli-automation",
+      "name": "Ue Cli Automation",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/01_编辑器桥接/ue-cli-automation",
+      "description": "ue-cli automation run-tests via BuildGraph.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "UI": 1.0,
+          "测试": 0.9,
+          "构建": 1.0,
+          "调试": 0.9,
+          "编辑器桥接": 1.0
+        },
+        "task_type": {
+          "构建": 1.0,
+          "验证": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "automation",
+        "run-tests",
+        "BuildGraph测试"
+      ],
+      "tools": [
+        "Shell"
+      ],
+      "estimated_tokens": 1192
+    },
+    {
+      "id": "ue-cli-blueprint",
+      "name": "Ue Cli Blueprint",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/01_编辑器桥接/ue-cli-blueprint",
+      "description": "ue-cli blueprint query and compilation.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "资产": 0.9,
+          "蓝图": 1.0,
+          "调试": 0.9,
+          "编辑器桥接": 1.0
+        },
+        "task_type": {
+          "查询": 0.9
+        },
+        "artifact": {
+          "Blueprint": 1.0
+        }
+      },
+      "triggers": [
+        "ue-cli blueprint",
+        "蓝图查询",
+        "蓝图编译"
+      ],
+      "tools": [
+        "Shell",
+        "ReadFile/WriteFile"
+      ],
+      "estimated_tokens": 390
+    },
+    {
+      "id": "ue-cli-remote-control",
+      "name": "Ue Cli Remote Control",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/01_编辑器桥接/ue-cli-remote-control",
+      "description": "ue-cli remote-control API for calling UE editor functions.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "调试": 0.9,
+          "编辑器桥接": 1.0
+        },
+        "task_type": {
+          "修改": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "remote-control",
+        "RC API",
+        "TriggerExcelPreCheckinExport"
+      ],
+      "tools": [
+        "Shell"
+      ],
+      "estimated_tokens": 1754
+    },
+    {
+      "id": "ue-cli-runtime",
+      "name": "Ue Cli Runtime",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/01_编辑器桥接/ue-cli-runtime",
+      "description": "ue-cli runtime actor query and log reading.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "调试": 0.9,
+          "编辑器桥接": 1.0
+        },
+        "task_type": {
+          "查询": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "ue-cli runtime",
+        "查询关卡",
+        "UE日志",
+        "PIE运行时"
+      ],
+      "tools": [
+        "Shell"
+      ],
+      "estimated_tokens": 391
+    },
+    {
+      "id": "ue-cli-shared",
+      "name": "Ue Cli Shared",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/01_编辑器桥接/ue-cli-shared",
+      "description": "ue-cli shared basics — setup, connection troubleshooting.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "调试": 0.9,
+          "编辑器桥接": 1.0
+        },
+        "task_type": {
+          "调试": 1.0
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "ue-cli setup",
+        "SoftUEBridge连接",
+        "instance.json"
+      ],
+      "tools": [
+        "Shell"
+      ],
+      "estimated_tokens": 775
+    },
+    {
+      "id": "core-redirects-debug",
+      "name": "Core Redirects Debug",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/02_运行时调试/core-redirects-debug",
+      "description": "Diagnose and fix UE CoreRedirects errors.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "调试": 0.9
+        },
+        "task_type": {
+          "调试": 1.0,
+          "修复": 1.0
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "CoreRedirects",
+        "资产重定向",
+        "AddRedirect failed"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1161
+    },
+    {
+      "id": "runtime-grid-fix",
+      "name": "Runtime Grid Fix",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/02_运行时调试/runtime-grid-fix",
+      "description": "Batch fix invalid RuntimeGrid names in WP level instances.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "调试": 0.9
+        },
+        "task_type": {
+          "修复": 1.0
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "RuntimeGrid",
+        "BuildingBlock",
+        "无效运行时网格"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1695
+    },
+    {
+      "id": "slateim-debug-tool",
+      "name": "Slateim Debug Tool",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/02_运行时调试/slateim-debug-tool",
+      "description": "Create and modify SlateIM-based debug tools.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "UI": 1.0,
+          "调试": 0.9
+        },
+        "task_type": {
+          "修改": 0.9,
+          "创建": 0.8,
+          "调试": 1.0
+        },
+        "artifact": {
+          "SWidget": 0.9
+        }
+      },
+      "triggers": [
+        "SlateIM",
+        "debug tool",
+        "调试工具"
+      ],
+      "tools": [
+        "ReadFile/WriteFile"
+      ],
+      "estimated_tokens": 2600
+    },
+    {
+      "id": "precheckin",
+      "name": "Precheckin",
+      "path": "02_ProjectLungfish专用/03_引擎扩展与调试/03_规范与检查/precheckin",
+      "description": "Export Excel tables to UE DataTable assets via excel_exporter.py.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "数据处理": 1.0,
+          "资产": 0.9,
+          "调试": 0.9
+        },
+        "task_type": {
+          "导出": 1.0
+        },
+        "artifact": {
+          ".uasset": 0.8,
+          ".xlsx": 1.0,
+          "DataTable": 0.9
+        }
+      },
+      "triggers": [
+        "excel_exporter",
+        "precheckin",
+        "Excel转DataTable",
+        "DT导出"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1689
+    },
+    {
+      "id": "unreal-build-commands",
+      "name": "Unreal Build Commands",
+      "path": "02_ProjectLungfish专用/04_测试与构建/01_构建系统/unreal-build-commands",
+      "description": "UBT compile commands — must call after any C++ change.",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "测试": 0.9,
+          "构建": 1.0
+        },
+        "task_type": {
+          "修改": 0.9,
+          "构建": 1.0
+        },
+        "artifact": {
+          ".cpp/.h": 1.0
+        }
+      },
+      "triggers": [
+        "编译",
+        "build",
+        "UBT",
+        "编译验证",
+        "修改C++后"
+      ],
+      "tools": [
+        "Shell"
+      ],
+      "estimated_tokens": 845
+    },
+    {
+      "id": "unreal-build-fix",
+      "name": "Unreal Build Fix",
+      "path": "02_ProjectLungfish专用/04_测试与构建/01_构建系统/unreal-build-fix",
+      "description": "UE build error diagnosis and resolution.",
+      "vector": {
+        "domain": {
+          "UI": 1.0,
+          "测试": 0.9,
+          "构建": 1.0,
+          "调试": 0.9
+        },
+        "task_type": {
+          "构建": 1.0
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "编译错误",
+        "build failed",
+        "LNK",
+        "linking"
+      ],
+      "tools": [
+        "Shell"
+      ],
+      "estimated_tokens": 3024
+    },
+    {
+      "id": "unreal-cpp-workflow",
+      "name": "Unreal Cpp Workflow",
+      "path": "02_ProjectLungfish专用/04_测试与构建/01_构建系统/unreal-cpp-workflow",
+      "description": "Core UE C++ development workflow for ProjectLungfish.",
+      "vector": {
+        "domain": {
+          "测试": 0.9,
+          "构建": 1.0
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          ".cpp/.h": 1.0
+        }
+      },
+      "triggers": [
+        "C++开发",
+        "cpp workflow",
+        ".build.cs"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 2011
+    },
+    {
+      "id": "pie-error-fix-notify",
+      "name": "Pie Error Fix Notify",
+      "path": "02_ProjectLungfish专用/04_测试与构建/02_PIE调试/pie-error-fix-notify",
+      "description": "PIE error analysis, Blueprint auto-fix, and Feishu notification.",
+      "vector": {
+        "domain": {
+          "测试": 0.9,
+          "构建": 1.0,
+          "协作": 0.8,
+          "资产": 0.9,
+          "蓝图": 1.0,
+          "调试": 0.9,
+          "PIE调试": 1.0
+        },
+        "task_type": {
+          "修复": 1.0
+        },
+        "artifact": {
+          "Blueprint": 1.0
+        }
+      },
+      "triggers": [
+        "PIE错误",
+        "PIEErrorList",
+        "蓝图崩溃",
+        "运行时崩溃"
+      ],
+      "tools": [
+        "Shell/API",
+        "ReadFile/WriteFile"
+      ],
+      "estimated_tokens": 1658
+    },
+    {
+      "id": "plbehaviortreesm-editor-context",
+      "name": "Plbehaviortreesm Editor Context",
+      "path": "02_ProjectLungfish专用/05_系统与插件/01_BehaviorTreeSM/plbehaviortreesm-editor-context",
+      "description": "PLBehaviorTreeSM plugin editor context and workflow.",
+      "vector": {
+        "domain": {
+          "插件": 0.8
+        },
+        "task_type": {
+          "修改": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "BehaviorTreeSM",
+        "BLBT",
+        "State Machine"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 459
+    },
+    {
+      "id": "openspec-apply-change_pl",
+      "name": "Openspec Apply Change Pl",
+      "path": "02_ProjectLungfish专用/05_系统与插件/03_OpenSpec项目版/openspec-apply-change",
+      "description": "[ProjectLungfish ver] Implement tasks from an OpenSpec change.",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "插件": 0.8
+        },
+        "task_type": {
+          "修改": 0.9,
+          "实现": 0.8
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "OpenSpec PL",
+        "实现任务"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1181
+    },
+    {
+      "id": "openspec-archive-change_pl",
+      "name": "Openspec Archive Change Pl",
+      "path": "02_ProjectLungfish专用/05_系统与插件/03_OpenSpec项目版/openspec-archive-change",
+      "description": "[ProjectLungfish ver] Archive a completed change.",
+      "vector": {
+        "domain": {
+          "插件": 0.8
+        },
+        "task_type": {
+          "修改": 0.9
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "OpenSpec PL",
+        "归档"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1039
+    },
+    {
+      "id": "openspec-explore_pl",
+      "name": "Openspec Explore Pl",
+      "path": "02_ProjectLungfish专用/05_系统与插件/03_OpenSpec项目版/openspec-explore",
+      "description": "[ProjectLungfish ver] Enter explore mode.",
+      "vector": {
+        "domain": {
+          "插件": 0.8
+        },
+        "task_type": {
+          "查询": 0.5
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "OpenSpec PL",
+        "探索"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 2642
+    },
+    {
+      "id": "openspec-propose_pl",
+      "name": "Openspec Propose Pl",
+      "path": "02_ProjectLungfish专用/05_系统与插件/03_OpenSpec项目版/openspec-propose",
+      "description": "[ProjectLungfish ver] Propose a new change.",
+      "vector": {
+        "domain": {
+          "插件": 0.8
+        },
+        "task_type": {
+          "修改": 0.9,
+          "创建": 0.8
+        },
+        "artifact": {
+          "任意": 0.3
+        }
+      },
+      "triggers": [
+        "OpenSpec PL",
+        "提案"
+      ],
+      "tools": [
+        "ReadFile"
+      ],
+      "estimated_tokens": 1161
+    },
+    {
+      "id": "codebase-search",
+      "name": "代码库高效侦察",
+      "path": "01_通用/05_代码库探索/codebase-search",
+      "description": "高效侦察代码库结构，使用 Glob -> Grep -> 选择性 ReadFile 的三阶段渐进式探索协议，避免逐文件读取造成的上下文膨胀和搜索延迟。",
+      "vector": {
+        "domain": {
+          "通用": 1.0,
+          "工具链": 0.8
+        },
+        "task_type": {
+          "查询": 1.0,
+          "探索": 1.0,
+          "调试": 0.7
+        },
+        "artifact": {
+          "任意": 0.9
+        }
+      },
+      "triggers": [
+        "找文件",
+        "搜索代码",
+        "定位",
+        "探索项目",
+        "了解结构",
+        "scan codebase",
+        "codebase exploration",
+        "find where",
+        "这个项目怎么组织的",
+        "找一下",
+        "在哪里"
+      ],
+      "tools": [
+        "Glob",
+        "Grep",
+        "ReadFile",
+        "Shell"
+      ],
+      "estimated_tokens": 1600
+    },
+    {
+      "id": "ue-software-architecture",
+      "name": "UE项目软件工程规范",
+      "path": "02_ProjectLungfish专用/06_软件工程规范/ue-software-architecture",
+      "description": "ProjectLungfish 的 UE 代码结构、模块组织、C++ Blueprint 边界、GAS 架构模式、命名约定、目录规范。",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "蓝图": 0.8,
+          "数据配置": 0.5
+        },
+        "task_type": {
+          "查询": 0.8,
+          "创建": 0.9,
+          "修改": 0.9
+        },
+        "artifact": {
+          ".cpp/.h": 1.0,
+          "Blueprint": 0.8,
+          ".build.cs": 0.9
+        }
+      },
+      "triggers": [
+        "项目结构",
+        "代码规范",
+        "模块",
+        "命名约定",
+        "GAS架构",
+        "C++ Blueprint边界",
+        "Source目录",
+        "Build.cs",
+        "uproject",
+        "插件结构",
+        "Gameplay Ability System",
+        "AttributeSet",
+        "Enhanced Input",
+        "项目架构"
+      ],
+      "tools": [
+        "Glob",
+        "Grep",
+        "ReadFile"
+      ],
+      "estimated_tokens": 2100
+    },
+    {
+      "id": "code-quality-guardian",
+      "name": "代码质量守护",
+      "path": "02_ProjectLungfish专用/04_测试与构建/03_代码质量/code-quality-guardian",
+      "description": "代码修改后的质量守护。强制5-Gate检查清单：编译验证、测试验证、回归检查、P4版本控制、代码审查自检。",
+      "vector": {
+        "domain": {
+          "构建": 1.0,
+          "调试": 0.9,
+          "测试": 1.0,
+          "版本控制": 0.8
+        },
+        "task_type": {
+          "验证": 1.0,
+          "审核": 1.0,
+          "修复": 0.8
+        },
+        "artifact": {
+          ".cpp/.h": 0.9,
+          "Blueprint": 0.8,
+          ".xlsx": 0.5
+        }
+      },
+      "triggers": [
+        "完成了",
+        "改好了",
+        "搞定了",
+        "Done",
+        "Finished",
+        "提交吧",
+        "ready to submit",
+        "commit",
+        "编译验证",
+        "代码审查",
+        "质量检查",
+        "回归测试",
+        "预提交"
+      ],
+      "tools": [
+        "Shell",
+        "Grep",
+        "ReadFile"
+      ],
+      "estimated_tokens": 1800
+    },
+    {
+      "id": "ue-dev-orchestrator",
+      "name": "UE开发自动化编排器",
+      "path": "02_ProjectLungfish专用/07_开发工作流编排/ue-dev-orchestrator",
+      "description": "UE 开发自动化编排器（Meta-Skill）。当用户要求修改任何 UE C++/Blueprint/配置/资产时，自动接管并驱动完整开发闭环。内置 Capability Registry，硬编码任务类型到 Skill 调用链的映射。",
+      "vector": {
+        "domain": {
+          "引擎": 1.0,
+          "构建": 0.9,
+          "调试": 0.8,
+          "资产": 0.8,
+          "数据配置": 0.7
+        },
+        "task_type": {
+          "修改": 1.0,
+          "创建": 0.9,
+          "修复": 0.9,
+          "验证": 0.8
+        },
+        "artifact": {
+          ".cpp/.h": 0.9,
+          "Blueprint": 0.9,
+          ".xlsx": 0.7,
+          "FlowGraph": 0.7
+        }
+      },
+      "triggers": [
+        "改一下",
+        "添加",
+        "修复",
+        "删除",
+        "实现",
+        "修改",
+        "优化",
+        "完成",
+        "Done",
+        "Finished",
+        "搞定了",
+        "提交吧"
+      ],
+      "tools": [
+        "All"
+      ],
+      "estimated_tokens": 2800
+    }
+  ],
+  "relations": {
+    "engine-modifications": {
+      "automated-perf-testing": 0.4,
+      "unreal-game-sync": 0.3,
+      "skill-creator": 0.3
+    },
+    "engine-slate-runtime": {
+      "slateim-debug-tool": 0.55,
+      "engine-pcg-plugin": 0.3
+    },
+    "engine-pcg-plugin": {
+      "engine-slate-runtime": 0.3
+    },
+    "gauntlet-test-automation": {
+      "automated-perf-testing": 0.4,
+      "sessionfrontend-developer": 0.4,
+      "branch-manager": 0.3
+    },
+    "automated-perf-testing": {
+      "engine-modifications": 0.4,
+      "gauntlet-test-automation": 0.4,
+      "unreal-game-sync": 0.4,
+      "skill-creator": 0.4,
+      "sessionfrontend-developer": 0.3
+    },
+    "sessionfrontend-developer": {
+      "gauntlet-test-automation": 0.4,
+      "automated-perf-testing": 0.3,
+      "branch-manager": 0.3
+    },
+    "robomerge-v3": {
+      "unreal-game-sync": 0.6,
+      "p4-workflow": 0.4,
+      "automated-perf-testing": 0.3,
+      "pr": 0.3,
+      "skill-creator": 0.3
+    },
+    "unreal-game-sync": {
+      "robomerge-v3": 0.6,
+      "automated-perf-testing": 0.4,
+      "p4-workflow": 0.4,
+      "engine-modifications": 0.3,
+      "skill-creator": 0.3
+    },
+    "p4-workflow": {
+      "pr": 1.0,
+      "robomerge-v3": 0.4,
+      "unreal-game-sync": 0.4,
+      "branch-manager": 0.4,
+      "skill-creator": 0.4,
+      "code-quality-guardian": 0.88,
+      "ue-dev-orchestrator": 0.95
+    },
+    "pr": {
+      "p4-workflow": 1.0,
+      "openspec-apply-change": 0.4,
+      "openspec-archive-change": 0.4,
+      "openspec-explore": 0.4,
+      "openspec-propose": 0.4,
+      "code-quality-guardian": 0.82,
+      "ue-dev-orchestrator": 0.9
+    },
+    "openspec-apply-change": {
+      "openspec-archive-change": 1.0,
+      "openspec-propose": 1.0,
+      "openspec-explore": 0.75,
+      "pr": 0.4,
+      "excel-query": 0.4
+    },
+    "openspec-archive-change": {
+      "openspec-apply-change": 1.0,
+      "openspec-propose": 0.85,
+      "openspec-explore": 0.75,
+      "pr": 0.4,
+      "excel-query": 0.4
+    },
+    "openspec-explore": {
+      "openspec-propose": 1.0,
+      "openspec-apply-change": 0.75,
+      "openspec-archive-change": 0.75,
+      "pr": 0.4,
+      "excel-query": 0.4
+    },
+    "openspec-propose": {
+      "openspec-apply-change": 1.0,
+      "openspec-explore": 1.0,
+      "openspec-archive-change": 0.85,
+      "pr": 0.4,
+      "excel-query": 0.4
+    },
+    "excel-query": {
+      "xlsx-row-copy": 1.0,
+      "openspec-apply-change": 0.4,
+      "openspec-archive-change": 0.4,
+      "openspec-explore": 0.4,
+      "openspec-propose": 0.4,
+      "ue-dev-orchestrator": 0.7
+    },
+    "xlsx-row-copy": {
+      "excel-query": 1.0,
+      "pr": 0.3,
+      "openspec-apply-change": 0.3,
+      "openspec-archive-change": 0.3,
+      "openspec-explore": 0.3
+    },
+    "branch-manager": {
+      "feishu-doc-reader": 0.6,
+      "p4-workflow": 0.4,
+      "openspec-apply-change": 0.4,
+      "openspec-archive-change": 0.4,
+      "openspec-explore": 0.4
+    },
+    "feishu-doc-reader": {
+      "branch-manager": 0.6,
+      "pr": 0.4,
+      "openspec-apply-change": 0.4,
+      "openspec-archive-change": 0.4,
+      "openspec-explore": 0.4
+    },
+    "kimi-cli-help": {
+      "template": 0.6,
+      "skill-creator": 0.5,
+      "pr": 0.4,
+      "openspec-apply-change": 0.4,
+      "openspec-archive-change": 0.4
+    },
+    "skill-creator": {
+      "kimi-cli-help": 0.5,
+      "template": 0.5,
+      "automated-perf-testing": 0.4,
+      "p4-workflow": 0.4,
+      "branch-manager": 0.4
+    },
+    "template": {
+      "kimi-cli-help": 0.6,
+      "skill-creator": 0.5,
+      "pr": 0.4,
+      "openspec-apply-change": 0.4,
+      "openspec-archive-change": 0.4
+    },
+    "asset-export": {
+      "blueprint-migration": 0.7,
+      "damage-flow-graph-authoring": 0.4,
+      "ue-blueprint-reflection": 0.3,
+      "flowgraph-edit": 0.3
+    },
+    "blueprint-migration": {
+      "ue-blueprint-reflection": 1.0,
+      "asset-export": 0.7,
+      "native-class-derivation": 0.55,
+      "ue-cli-blueprint": 0.4,
+      "damage-flow-graph-authoring": 0.3,
+      "codebase-search": 0.55,
+      "ue-software-architecture": 0.88
+    },
+    "ue-blueprint-reflection": {
+      "blueprint-migration": 1.0,
+      "asset-export": 0.3,
+      "damage-flow-graph-authoring": 0.3,
+      "ue-cli-blueprint": 0.3,
+      "pie-error-fix-notify": 0.3
+    },
+    "damage-flow-graph-authoring": {
+      "flowgraph-edit": 0.9,
+      "flowgraph-audit": 0.75,
+      "asset-export": 0.4,
+      "blueprint-migration": 0.3,
+      "ue-blueprint-reflection": 0.3,
+      "ue-dev-orchestrator": 0.7
+    },
+    "flowgraph-audit": {
+      "flowgraph-edit": 1.0,
+      "damage-flow-graph-authoring": 0.75
+    },
+    "flowgraph-edit": {
+      "flowgraph-audit": 1.0,
+      "damage-flow-graph-authoring": 0.9,
+      "asset-export": 0.3,
+      "ue-dev-orchestrator": 0.75
+    },
+    "entity-tag-modifier": {
+      "ConfigurationTools": 0.7,
+      "precheckin": 0.55,
+      "native-class-derivation": 0.4,
+      "entry-cpp": 0.3,
+      "entry-design": 0.3,
+      "ue-dev-orchestrator": 0.75
+    },
+    "entry-cpp": {
+      "entry-design": 1.0,
+      "equip-entry-pool-config": 1.0,
+      "ConfigurationTools": 0.4,
+      "entity-tag-modifier": 0.3,
+      "native-class-derivation": 0.3,
+      "ue-software-architecture": 0.7
+    },
+    "entry-design": {
+      "entry-cpp": 1.0,
+      "equip-entry-pool-config": 1.0,
+      "ConfigurationTools": 0.4,
+      "entity-tag-modifier": 0.3,
+      "native-class-derivation": 0.3
+    },
+    "equip-entry-pool-config": {
+      "entry-cpp": 1.0,
+      "entry-design": 1.0,
+      "ConfigurationTools": 0.4,
+      "entity-tag-modifier": 0.3,
+      "native-class-derivation": 0.3
+    },
+    "ConfigurationTools": {
+      "entity-tag-modifier": 0.7,
+      "entry-cpp": 0.4,
+      "entry-design": 0.4,
+      "equip-entry-pool-config": 0.4,
+      "native-class-derivation": 0.3
+    },
+    "native-class-derivation": {
+      "blueprint-migration": 0.55,
+      "entity-tag-modifier": 0.4,
+      "entry-cpp": 0.3,
+      "entry-design": 0.3,
+      "equip-entry-pool-config": 0.3,
+      "ue-software-architecture": 0.9
+    },
+    "soft-ue-bridge": {
+      "ue-cli-runtime": 1.0,
+      "ue-cli-shared": 1.0,
+      "ue-cli-remote-control": 0.7,
+      "ue-cli-asset": 0.6,
+      "ue-cli-blueprint": 0.6,
+      "ue-dev-orchestrator": 0.8
+    },
+    "ue-cli-asset": {
+      "ue-cli-blueprint": 1.0,
+      "ue-cli-runtime": 0.7,
+      "soft-ue-bridge": 0.6,
+      "ue-cli-remote-control": 0.6,
+      "ue-cli-shared": 0.6
+    },
+    "ue-cli-automation": {
+      "ue-cli-shared": 1.0,
+      "ue-cli-remote-control": 0.6,
+      "ue-cli-runtime": 0.6,
+      "soft-ue-bridge": 0.5,
+      "ue-cli-asset": 0.5,
+      "code-quality-guardian": 0.85
+    },
+    "ue-cli-blueprint": {
+      "ue-cli-asset": 1.0,
+      "ue-cli-runtime": 0.7,
+      "soft-ue-bridge": 0.6,
+      "ue-cli-remote-control": 0.6,
+      "ue-cli-shared": 0.6,
+      "code-quality-guardian": 0.8,
+      "ue-dev-orchestrator": 0.85
+    },
+    "ue-cli-remote-control": {
+      "soft-ue-bridge": 0.7,
+      "precheckin": 0.7,
+      "ue-cli-asset": 0.6,
+      "ue-cli-automation": 0.6,
+      "ue-cli-blueprint": 0.6
+    },
+    "ue-cli-runtime": {
+      "soft-ue-bridge": 1.0,
+      "ue-cli-asset": 0.7,
+      "ue-cli-blueprint": 0.7,
+      "ue-cli-automation": 0.6,
+      "ue-cli-remote-control": 0.6,
+      "ue-dev-orchestrator": 0.85
+    },
+    "ue-cli-shared": {
+      "soft-ue-bridge": 1.0,
+      "ue-cli-automation": 1.0,
+      "ue-cli-asset": 0.6,
+      "ue-cli-blueprint": 0.6,
+      "ue-cli-remote-control": 0.6
+    },
+    "core-redirects-debug": {
+      "runtime-grid-fix": 1.0,
+      "slateim-debug-tool": 0.6,
+      "pie-error-fix-notify": 0.55,
+      "soft-ue-bridge": 0.4,
+      "ue-cli-asset": 0.4,
+      "ue-dev-orchestrator": 0.7
+    },
+    "runtime-grid-fix": {
+      "core-redirects-debug": 1.0,
+      "slateim-debug-tool": 0.6,
+      "soft-ue-bridge": 0.4,
+      "ue-cli-asset": 0.4,
+      "ue-cli-remote-control": 0.4
+    },
+    "slateim-debug-tool": {
+      "core-redirects-debug": 0.6,
+      "runtime-grid-fix": 0.6,
+      "engine-slate-runtime": 0.55,
+      "ue-cli-automation": 0.4,
+      "soft-ue-bridge": 0.3
+    },
+    "precheckin": {
+      "ue-cli-remote-control": 0.7,
+      "entity-tag-modifier": 0.55,
+      "excel-query": 0.4,
+      "ue-cli-asset": 0.4,
+      "core-redirects-debug": 0.4,
+      "code-quality-guardian": 0.75,
+      "ue-dev-orchestrator": 0.75
+    },
+    "unreal-build-commands": {
+      "unreal-cpp-workflow": 1.0,
+      "unreal-build-fix": 0.9,
+      "ue-cli-automation": 0.4,
+      "code-quality-guardian": 0.95,
+      "ue-dev-orchestrator": 0.9
+    },
+    "unreal-build-fix": {
+      "unreal-cpp-workflow": 1.0,
+      "unreal-build-commands": 0.9,
+      "ue-cli-automation": 0.4,
+      "ConfigurationTools": 0.3,
+      "slateim-debug-tool": 0.3,
+      "code-quality-guardian": 0.9,
+      "ue-dev-orchestrator": 0.85
+    },
+    "unreal-cpp-workflow": {
+      "unreal-build-commands": 1.0,
+      "unreal-build-fix": 1.0,
+      "ue-cli-automation": 0.3,
+      "pie-error-fix-notify": 0.3,
+      "codebase-search": 0.65,
+      "ue-software-architecture": 0.92,
+      "ue-dev-orchestrator": 0.9
+    },
+    "pie-error-fix-notify": {
+      "ue-cli-runtime": 0.55,
+      "core-redirects-debug": 0.55,
+      "ue-blueprint-reflection": 0.3,
+      "unreal-build-fix": 0.3,
+      "unreal-cpp-workflow": 0.3,
+      "code-quality-guardian": 0.78,
+      "ue-dev-orchestrator": 0.8
+    },
+    "plbehaviortreesm-editor-context": {
+      "openspec-archive-change_pl": 0.4,
+      "openspec-explore_pl": 0.4,
+      "openspec-propose_pl": 0.4,
+      "openspec-apply-change_pl": 0.3
+    },
+    "openspec-apply-change_pl": {
+      "openspec-archive-change_pl": 0.75,
+      "openspec-propose_pl": 0.75,
+      "openspec-explore_pl": 0.65,
+      "openspec-apply-change": 0.4,
+      "plbehaviortreesm-editor-context": 0.3
+    },
+    "openspec-archive-change_pl": {
+      "openspec-propose_pl": 0.85,
+      "openspec-apply-change_pl": 0.75,
+      "openspec-explore_pl": 0.75,
+      "plbehaviortreesm-editor-context": 0.4
+    },
+    "openspec-explore_pl": {
+      "openspec-archive-change_pl": 0.75,
+      "openspec-propose_pl": 0.75,
+      "openspec-apply-change_pl": 0.65,
+      "plbehaviortreesm-editor-context": 0.4
+    },
+    "openspec-propose_pl": {
+      "openspec-archive-change_pl": 0.85,
+      "openspec-apply-change_pl": 0.75,
+      "openspec-explore_pl": 0.75,
+      "plbehaviortreesm-editor-context": 0.4
+    },
+    "codebase-search": {
+      "ue-software-architecture": 0.75,
+      "code-quality-guardian": 0.6,
+      "unreal-cpp-workflow": 0.65,
+      "blueprint-migration": 0.55,
+      "ue-dev-orchestrator": 0.95
+    },
+    "ue-software-architecture": {
+      "code-quality-guardian": 0.85,
+      "native-class-derivation": 0.9,
+      "unreal-cpp-workflow": 0.92,
+      "blueprint-migration": 0.88,
+      "entry-cpp": 0.7,
+      "codebase-search": 0.75,
+      "ue-dev-orchestrator": 0.92
+    },
+    "code-quality-guardian": {
+      "unreal-build-commands": 0.95,
+      "unreal-build-fix": 0.9,
+      "ue-cli-automation": 0.85,
+      "ue-cli-blueprint": 0.8,
+      "precheckin": 0.75,
+      "p4-workflow": 0.88,
+      "pr": 0.82,
+      "pie-error-fix-notify": 0.78,
+      "ue-software-architecture": 0.85,
+      "codebase-search": 0.6,
+      "ue-dev-orchestrator": 0.95
+    },
+    "ue-dev-orchestrator": {
+      "codebase-search": 0.95,
+      "p4-workflow": 0.95,
+      "pr": 0.9,
+      "ue-software-architecture": 0.92,
+      "code-quality-guardian": 0.95,
+      "unreal-cpp-workflow": 0.9,
+      "unreal-build-commands": 0.9,
+      "unreal-build-fix": 0.85,
+      "ue-cli-blueprint": 0.85,
+      "ue-cli-runtime": 0.85,
+      "soft-ue-bridge": 0.8,
+      "pie-error-fix-notify": 0.8,
+      "entity-tag-modifier": 0.75,
+      "excel-query": 0.7,
+      "precheckin": 0.75,
+      "flowgraph-edit": 0.75,
+      "damage-flow-graph-authoring": 0.7,
+      "core-redirects-debug": 0.7
+    }
+  },
+  "routing_table": {
+    "编译/Build/UBT/C++": [
+      "unreal-build-commands",
+      "unreal-cpp-workflow",
+      "unreal-build-fix"
+    ],
+    "P4/提交/Checkout/Changelist/Perforce": [
+      "p4-workflow",
+      "pr",
+      "robomerge-v3"
+    ],
+    "Excel/导出/DataTable/配表/查询": [
+      "precheckin",
+      "excel-query",
+      "xlsx-row-copy",
+      "entity-tag-modifier"
+    ],
+    "PIE/报错/蓝图崩溃/运行时修复": [
+      "pie-error-fix-notify",
+      "ue-cli-runtime",
+      "core-redirects-debug",
+      "runtime-grid-fix"
+    ],
+    "词条/EquipEntry/装备/词缀/通货": [
+      "entry-design",
+      "entry-cpp",
+      "equip-entry-pool-config"
+    ],
+    "蓝图/转C++/反射/迁移": [
+      "blueprint-migration",
+      "ue-blueprint-reflection"
+    ],
+    "FlowGraph/伤害流图/审核/编辑": [
+      "damage-flow-graph-authoring",
+      "flowgraph-audit",
+      "flowgraph-edit"
+    ],
+    "资产/导出/全量导出/AssetExport": [
+      "asset-export"
+    ],
+    "OpenSpec/提案/实现/归档/探索": [
+      "openspec-propose",
+      "openspec-explore",
+      "openspec-apply-change",
+      "openspec-archive-change"
+    ],
+    "Slate/UMG/UI/Widget": [
+      "engine-slate-runtime",
+      "slateim-debug-tool"
+    ],
+    "ue-cli/编辑器桥接/MCP/SoftUEBridge": [
+      "soft-ue-bridge",
+      "ue-cli-shared",
+      "ue-cli-asset",
+      "ue-cli-blueprint",
+      "ue-cli-runtime",
+      "ue-cli-automation",
+      "ue-cli-remote-control"
+    ],
+    "引擎修改/PCG/本地化": [
+      "engine-modifications",
+      "engine-pcg-plugin",
+      "localization-string-table"
+    ],
+    "测试/Gauntlet/自动化/性能": [
+      "gauntlet-test-automation",
+      "automated-perf-testing",
+      "sessionfrontend-developer"
+    ],
+    "实体/Tag/属性/配置": [
+      "entity-tag-modifier",
+      "ConfigurationTools",
+      "native-class-derivation"
+    ],
+    "飞书/文档/协作/分支管理": [
+      "feishu-doc-reader",
+      "branch-manager"
+    ],
+    "搜索/找文件/探索代码库/定位": [
+      "codebase-search"
+    ],
+    "代码规范/项目结构/命名约定/模块": [
+      "ue-software-architecture"
+    ],
+    "代码审查/质量/编译验证/预提交/完成了": [
+      "code-quality-guardian"
+    ],
+    "改一下/添加/修复/实现/修改/优化/完成了": [
+      "ue-dev-orchestrator"
+    ],
+    "UE开发/自动编排/工作流/闭环": [
+      "ue-dev-orchestrator"
+    ]
+  }
+}

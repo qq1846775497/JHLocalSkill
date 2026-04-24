@@ -1,0 +1,13 @@
+# 批量建筑条目配置输入文件
+# -----------------------------------------------
+# 格式：EntityTag,中文名称
+# 以 # 开头的行为注释，空行会被跳过
+# -----------------------------------------------
+# 用法：
+#   Tools\ConfigurationTools\ConfigFacilityOrAccessory\add_building_entry.bat --batch Tools\ConfigurationTools\ConfigFacilityOrAccessory\batch_input.txt
+# -----------------------------------------------
+
+# 示例：
+# Entity.FireFlyLamp,萤火灯
+# Entity.Brazier,火盆
+# Entity.Drum,鼓
