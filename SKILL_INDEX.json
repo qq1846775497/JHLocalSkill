@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total_skills": 59,
+  "total_skills": 60,
   "skills": [
     {
       "id": "engine-modifications",
@@ -1742,6 +1742,43 @@
         "All"
       ],
       "estimated_tokens": 2800
+    },
+    {
+      "id": "skill-update-orchestrator",
+      "name": "Skill Update Orchestrator",
+      "path": "01_通用/05_系统工具/skill-update-orchestrator",
+      "description": "Skill 库批量更新编排器。当用户提到\"更新所有 skill\"时，通过交互式询问确定更新类型（语言包/项目 File-Skill/新增 Skill），然后执行对应的扫描、对比、更新、索引同步全流程。",
+      "vector": {
+        "domain": {
+          "项目管理": 0.9,
+          "工具链": 0.8,
+          "协作": 0.8
+        },
+        "task_type": {
+          "修改": 0.9,
+          "创建": 0.8
+        },
+        "artifact": {
+          "SKILL.md": 0.7
+        }
+      },
+      "triggers": [
+        "更新所有 skill",
+        "批量更新 skill",
+        "迭代 skill",
+        "刷新 skill 库",
+        "同步 skill",
+        "更新 file-skill"
+      ],
+      "tools": [
+        "AskUserQuestion",
+        "ReadFile",
+        "WriteFile",
+        "StrReplaceFile",
+        "Glob",
+        "Grep"
+      ],
+      "estimated_tokens": 1500
     }
   ],
   "relations": {
@@ -2167,6 +2204,12 @@
       "flowgraph-edit": 0.75,
       "damage-flow-graph-authoring": 0.7,
       "core-redirects-debug": 0.7
+    },
+    "skill-update-orchestrator": {
+      "file-skill-registry": 0.9,
+      "skill-creator": 0.8,
+      "codebase-search": 0.6,
+      "code-quality-guardian": 0.5
     }
   },
   "routing_table": {
@@ -2261,6 +2304,9 @@
     ],
     "UE开发/自动编排/工作流/闭环": [
       "ue-dev-orchestrator"
+    ],
+    "更新 skill/迭代 skill/刷新 skill 库/同步 skill": [
+      "skill-update-orchestrator"
     ]
   }
 }
