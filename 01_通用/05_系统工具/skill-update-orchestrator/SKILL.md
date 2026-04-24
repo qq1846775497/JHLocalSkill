@@ -1,4 +1,4 @@
----
+﻿---
 name: skill-update-orchestrator
 description: Skill 库批量更新编排器。当用户提到"更新所有 skill"时，通过交互式询问确定更新类型（语言包/项目 File-Skill/新增 Skill），然后执行对应的扫描、对比、更新、索引同步全流程。
 tags: [Skill-Update, Meta-Skill, Batch-Update, File-Skill, Vocabulary, Orchestrator]
@@ -24,9 +24,6 @@ tags: [Skill-Update, Meta-Skill, Batch-Update, File-Skill, Vocabulary, Orchestra
 
 使用 `AskUserQuestion` 弹出以下选项：
 
-```
-请选择要执行的更新类型：
-
 A. 更新语言包（vocabulary_live.jsonl + vocabulary_rules.json）
    → 基于近期对话提取新词汇，更新分类规则和语言画像
 
@@ -35,7 +32,6 @@ B. 更新 ProjectLungfish 项目 Skill（File-Skill 批量扫描）
 
 C. 添加新 Skill
    → 基于项目新模块/系统，创建新的 SKILL.md 并注册到索引
-```
 
 - **用户选 A** → 进入分支 A（语言包更新）
 - **用户选 B** → 进入分支 B（项目 Skill 批量更新）
@@ -128,7 +124,7 @@ C. 添加新 Skill
 └── 无需更新：X
 ```
 
-#### Step 4：批量更新（逐个执行）
+#### Step 4：批量更新（逐个执行，防覆盖协议）
 
 对每个"需要更新"的 file-skill：
 
@@ -137,13 +133,32 @@ C. 添加新 Skill
    > - **更新**：重新扫描源码，刷新档案
    > - **跳过**：保留当前档案
 
-2. **执行更新**：
+2. **执行更新（防覆盖协议）**：
    a. `ReadFile` 读取最新源码（提取 UFUNCTION、主要函数、类声明）
-   b. 对比现有 skill 中的 `functions` 列表
-   c. 使用 `StrReplaceFile` 更新 SKILL.md：
-      - 刷新"文件概述"
-      - 更新 `functions` 列表
-      - 追加 history 记录（标注为"批量更新：同步源码变更"）
+   b. `ReadFile` 读取现有 SKILL.md（**完整内容**，用于确认 frontmatter 不被破坏）
+   c. **绝对禁止** `WriteFile` 重写整个 SKILL.md
+   d. 只允许使用 `StrReplaceFile` 做以下**局部替换**：
+
+   | 字段 | 操作 | 说明 |
+   |------|------|------|
+   | `functions` | **追加**新函数 | 不删除旧函数，只追加源码中新发现的函数 |
+   | `history` | **顶部追加**新记录 | 在数组开头插入，保持时间倒序 |
+   | body"文件概述" | **局部刷新** | 只替换概述段落，不动其他章节 |
+   | `id` | **禁止修改** | 档案标识，一经创建永不变 |
+   | `file_path` | **禁止修改** | 源码路径，除非文件被移动 |
+   | `trigger_words` | **禁止修改** | 用户可能手动添加过自定义触发词 |
+   | `constraints` | **禁止修改** | 设计约束是 Plan Mode 阶段的人工产物，不可自动覆盖 |
+
+   e. history 追加格式：
+      ```yaml
+      - date: "YYYY-MM-DD"
+        requirement: "批量更新：同步源码变更"
+        changes: "新增函数：{func1}, {func2}"
+        functions_affected:
+          - "{func1}"
+          - "{func2}"
+        regression_detected: false
+      ```
 
 #### Step 5：发现新源码文件
 
@@ -159,19 +174,25 @@ C. 添加新 Skill
 
 6. 如用户选择创建，委托 `file-skill-registry` 的创建流程（复制模板、填入元数据）
 
-#### Step 6：同步 SKILL_INDEX.json
+#### Step 6：同步 SKILL_INDEX.json（防覆盖协议）
 
-1. `ReadFile` 读取 `SKILL_INDEX.json`
-2. 对每个更新/新增的 skill：
-   - 更新 `estimated_tokens`（基于 SKILL.md 当前文件大小估算）
-   - 如 triggers 有变化，更新 `triggers` 数组
-3. 对新增的 skill：
-   - 生成 `id`（kebab-case 目录名）
-   - 生成 `name`（frontmatter 中的 name 或目录名）
-   - 生成 `path`（相对 JHLocalSkill 根目录的路径）
-   - 生成初始 `vector`（基于 skill 内容推断 domain/task_type/artifact）
-   - 追加到 `skills[]` 数组末尾
-4. `WriteFile` 保存更新后的 `SKILL_INDEX.json`
+**绝对禁止** `WriteFile` 重写整个 SKILL_INDEX.json。必须使用 `StrReplaceFile` 做局部修改。
+
+1. `ReadFile` 读取 `SKILL_INDEX.json`（确认格式和现有内容）
+2. **更新现有 skill**（仅 `estimated_tokens`）：
+   - 找到目标 skill 的 `"estimated_tokens": <旧值>`
+   - 使用 `StrReplaceFile` 替换为新的 token 估算值
+   - **禁止**修改 `triggers`、`vector`、`description` 等其他字段
+3. **新增 skill**（追加到数组末尾）：
+   - 找到 `skills` 数组最后一个元素的 `}`
+   - 在其后插入新 skill 的 JSON 对象（带前导逗号）
+   - 使用 `StrReplaceFile` 精确插入
+4. **更新 relations**（如需）：
+   - 找到 `"relations": {` 后的合适位置
+   - 使用 `StrReplaceFile` 插入新 skill 的关联条目
+5. **更新 routing_table**（如需）：
+   - 找到 `"routing_table": {` 内末尾条目之前
+   - 使用 `StrReplaceFile` 插入新路由条目
 
 #### Step 7：完成汇报
 
@@ -181,7 +202,7 @@ C. 添加新 Skill
 ├── 新增档案数：X
 ├── 归档（源文件已删除）：X
 ├── 跳过未更新：X
-├── SKILL_INDEX.json：已同步
+├── SKILL_INDEX.json：已同步（局部修改，不覆盖其他 skill）
 └── 下一步：git add -A && git commit -m "更新 File-Skill 档案" && git push
 ```
 
@@ -198,7 +219,6 @@ C. 添加新 Skill
      > 新 Skill 的领域？
      > - 通用（UE 引擎、工具链、项目管理）
      > - ProjectLungfish 专用（资产管线、数据配置、调试）
-     
    - 询问用途描述（一句话）
 
 2. **确定目录位置**
@@ -225,14 +245,14 @@ C. 添加新 Skill
      ```
 
 4. **注册到 SKILL_INDEX.json**
-   - 按分支 B Step 6 的方式追加新 skill 元数据
+   - 按分支 B Step 6 的方式追加新 skill 元数据（局部插入，不覆盖索引）
 
 5. **汇报**
    ```
    ✅ 新 Skill 已创建
    ├── 路径：{path}
    ├── 名称：{name}
-   ├── SKILL_INDEX.json：已注册
+   ├── SKILL_INDEX.json：已注册（局部追加）
    └── 下一步：git add -A && git commit -m "添加新 skill: {name}" && git push
    ```
 
@@ -247,6 +267,8 @@ C. 添加新 Skill
 | **保留完整历史** | 所有更新以追加 `history` 方式记录，不删除旧记录 |
 | **逐个询问确认** | 默认模式下每个 file-skill 更新前询问用户；提供"全部自动更新"快捷选项 |
 | **源文件不存在时归档而非删除** | 发现源文件已删除时，询问是否归档 skill，不自动删除 |
+| **防覆盖协议** | 禁止 `WriteFile` 重写整个 SKILL.md 或 SKILL_INDEX.json，必须使用 `StrReplaceFile` 局部替换 |
+| **frontmatter 只读** | `id`/`name`/`file_path`/`description`/`tags`/`trigger_words`/`constraints` 禁止自动修改 |
 
 ---
 
@@ -270,3 +292,6 @@ C. 添加新 Skill
 | 源码文件权限拒绝 | P4 未 checkout | 自动执行 `p4 edit` |
 | SKILL_INDEX.json 格式损坏 | 追加时 JSON 语法错误 | 更新前备份原文件，出错时恢复 |
 | 更新后 AI 不加载新 skill | 索引未同步 | 确认 `SKILL_INDEX.json` 已更新且 `git push` |
+| **frontmatter 被重置** | AI 使用了 `WriteFile` 而非 `StrReplaceFile` | 立即停止，从 git 恢复旧版本，改用 `StrReplaceFile` 局部替换 |
+| **trigger_words 丢失** | 更新时覆盖了 frontmatter | 同上，从 git 恢复，禁止修改 `trigger_words` |
+| **constraints 被清空** | AI 误将 constraints 视为可自动更新字段 | 恢复文件，constraints 为 Plan Mode 人工产物，禁止自动覆盖 |
